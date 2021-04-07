@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>#Market</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="resources\img\coloricon2.png" sizes="32x32">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-4dNpRvNX0c/TdYEbYup8qbjvjaMrgUPh+g4I03CnNtANuv+VAvPL6LqdwzZKV38G" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="vendors/css/glide.core.min.css">
+
+    <link rel="stylesheet" href="resources/css/queries.css">
+    <link rel="icon" href="">
+    <!-- Refrences for W3SCHOOL icons -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* ----------------------- Colors In Use --------------------- */
+        /* 
+main color code : #ff2858
+dark shade : #cc002c
+light shade : #ff6687 
+*/
+
+        /* ----------------------------- Fonts In Use ----------------------- */
+        @font-face {
+            font-family: shabnam;
+            src: url("vendors/fonts/shabnam-font-v2.4.0/Shabnam.ttf");
+        }
+
+        @font-face {
+            font-family: yekanRegular;
+            src: url("vendors/fonts/yekan-regular.ttf");
+        }
+
+        @font-face {
+            font-family: vazirLight;
+            src: url("vendors/fonts/vazir-font-v16.1.0/Vazir-Light.ttf");
+        }
+
+        @font-face {
+            font-family: vazirThin;
+            src: url("vendors/fonts/vazir-font-v16.1.0/Vazir-Thin.ttf");
+        }
+
+        @font-face {
+            font-family: vazirMedium;
+            src: url("vendors/fonts/vazir-font-v16.1.0/Vazir-Medium.ttf");
+        }
+
+        @font-face {
+            font-family: Bkoodak;
+            src: url("vendors/fonts/B\ Koodak\ Bold.ttf");
+        }
+
+        @font-face {
+            font-family: bBadr;
+            src: url("vendors/fonts/B_Badr.ttf");
+        }
+
+        @font-face {
+            font-family: bBadrBold;
+            src: url("vendors/fonts/B_Badr_Bold.ttf");
+        }
+
+        @font-face {
+            font-family: bZar;
+            src: url("vendors/fonts/B_Zar_0.ttf");
+        }
+
+        @font-face {
+            font-family: bZarBold;
+            src: url("vendors/fonts/B_Zar_Bold_0.ttf");
+        }
+
+        @font-face {
+            font-family: farNazanin;
+            src: url("vendors/fonts/Far_Nazanin.ttf");
+        }
+
+        @font-face {
+            font-family: farTitr;
+            src: url("vendors/fonts/Far_TitrBd.ttf");
+        }
+
+        /*********************************************************************************************/
+        /*  ------------------------------------ General Setup ------------------------------------  */
+        /*********************************************************************************************/
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        /*********************************************************************************************/
+        /*  ------------------------------------ FULL Navbar -------------------------------- */
+        /*********************************************************************************************/
+
+        /* ----------------------- DESKTOP NAV ----------------------- */
+        .thinline {
+            width: 100%;
+            height: 15px;
+            background-color: #ff2858;
+            display: none;
+            transition: all 0.5s;
+        }
+
+        .testclass {
+            height: 0px;
+        }
+
+        .thinline2 {
+            width: 100%;
+            height: 5px;
+            background-color: #ff2858;
+        }
+
+        .mainnavdskt-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .mainnavdskt {
+            top: 15px;
+            width: 100%;
+            height: 100px;
+            background-color: #f2f2f2;
+            /* display: flex;
+						  justify-content: center; */
+            display: none;
+            z-index: 500;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .mainnavdskt-wrap {
+            width: 1200px;
+            height: 95px;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 3px;
+        }
+
+        .mainnavdskt-wrap-logo {
+            width: 11%;
+            line-height: 95px;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .navlogo {
+            width: 110%;
+            /* height: 90px; */
+            padding-top: 5px;
+            vertical-align: middle;
+        }
+
+        .mainnavdskt-wrap-searchsection {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            line-height: 95px;
+            z-index: 500;
+        }
+
+        .searchsection-container {
+            width: 100%;
+            margin-top: 0px;
+            box-shadow: 0px 2px 5px rgb(0 0 0 / 20%);
+            border-radius: 5px;
+            opacity: 1;
+        }
+
+        .searchsection-container-searchbox {
+            width: 100%;
+            height: 43px;
+            padding: 1px;
+            display: table;
+            background-color: #fff;
+            line-height: 30px;
+            position: relative;
+            border-radius: 5px;
+        }
+
+        .searchsection-container-searchbox input:focus {
+            outline: none;
+        }
+
+        .searchbox-inside {
+            width: 100%;
+            height: 39px;
+            padding: 0 29px 0 54px;
+            border: none;
+            background: none;
+            color: rgb(105, 105, 105);
+            font-family: vazirThin;
+            font-size: small;
+        }
+
+        .searchbtn-section {
+            width: 40px;
+            background: #ffffff;
+            top: 0;
+            left: 0;
+            height: 100%;
+            font-size: 19px;
+            color: #fff;
+            border-radius: 5px 0 0 5px;
+            position: absolute;
+            vertical-align: middle;
+        }
+
+        .searchbtn-button {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: none;
+            padding: 5px 10px;
+            color: #555;
+        }
+
+        .mainnavdskt-wrap-loginsection {
+            width: 26%;
+            line-height: 95px;
+            display: flex;
+
+            font-size: 14px;
+            text-align: center;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .mainnavdskt-wrap-loginsection a {
+            text-decoration: none;
+        }
+
+        .loginsection-container {
+            width: auto;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            text-align: right;
+        }
+
+        .loginsection-container-logo {
+            width: 42px;
+            height: 42px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            font-size: 100%;
+        }
+
+        .size {
+            width: 40px;
+            height: 40px;
+            filter: invert(35%) sepia(77%) saturate(5449%) hue-rotate(331deg) brightness(101%) contrast(101%);
+        }
+
+        .loginsection-container-text {
+            color: #212121;
+            font-size: 15px;
+            font-weight: bold;
+            font-family: yekanRegular;
+            margin-right: 5px;
+            vertical-align: baseline;
+        }
+
+        .loginsection-container-text:hover {
+            text-decoration: underline;
+            text-underline-offset: 10px;
+        }
+
+        .mainnavdskt-wrap-shopsection {
+            width: 68px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+            font-size: 14px;
+            line-height: 95px;
+        }
+
+        .shopsection-container {
+            width: 68px;
+            height: 68px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            background-color: #cc002c;
+            filter: drop-shadow(rgba(0, 0, 0, 0.2) 0px 2px 2px);
+        }
+
+        .shopsection-container:hover {
+            background-color: #ff6687;
+        }
+
+        .size2 {
+            width: 35px;
+            height: 35px;
+        }
+
+        .size3 {
+            width: 22px;
+            height: 22px;
+            filter: invert(47%) sepia(6%) saturate(42%) hue-rotate(95deg) brightness(96%) contrast(89%);
+        }
+
+        .mainnavdskt-categorysection {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            background: #ffffff;
+            border-bottom: solid 2px #ff6687;
+            transition: all 2s;
+        }
+
+        .categorysection-wrap {
+            width: 1200px;
+            max-width: 98%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 0 10px;
+            background-color: #ffffff;
+        }
+
+        .categorysection-wrap li {
+            outline: none;
+            list-style: none;
+        }
+
+        .categorysection-wrap a {
+            text-decoration: none;
+            border: none;
+        }
+
+        .categorysection-wrap :hover {
+            background-color: #ff6687;
+            color: #ffffff;
+            border-radius: 5px;
+        }
+
+        .categorysection-wrap-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: vazirLight;
+
+            padding: 9px 9px;
+            color: #757575;
+        }
+
+        /* ----------------------- RESPONSIVE NAV ----------------------- */
+        .mainnavres {
+            width: 100%;
+            height: 56px;
+            background-color: #ff2858;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 500;
+            top: 0;
+            border-bottom: 1px solid black;
+        }
+
+        .sticky2 {
+            background-color: #ff6687;
+            position: fixed;
+        }
+
+        .mainnav-res-guidehelp {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px 3px;
+            width: 28%;
+            height: 100%;
+        }
+
+        .mainnav-res-guidehelp a {
+            display: flex;
+            text-decoration: none;
+        }
+
+        .guidehelp-text {
+            font-family: shabnam;
+            color: white;
+        }
+
+        .guidehelp-queslogo {
+            width: 24px;
+            margin-left: 8px;
+        }
+
+        .mainnav-res-sharpmarketlogo {
+            display: flex;
+            justify-content: center;
+            margin: 0px 3px;
+            width: 46%;
+            height: 55px;
+        }
+
+        .mainnav-res-sharpmarketlogo a {
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            margin: 0px 3px;
+            width: 46%;
+            height: 55px;
+        }
+
+        .sharpmarketlogo-englishlogo {
+            margin-left: 20%;
+        }
+
+        .mainnav-res-loginsection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px 3px;
+            width: 10%;
+            height: 100%;
+        }
+
+        .personlogosize {
+            width: 25px;
+        }
+
+        .mainnav-res-basketsection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px 3px;
+            width: 10%;
+            height: 100%;
+        }
+
+
+        /* ----------------------- Navbar javascripts class's ----------------------- */
+        .js--displayon {
+            display: flex;
+        }
+
+        .js--displayonblock {
+            display: block;
+        }
+
+        .js--displayoff {
+            display: none;
+        }
+
+        /********************************************************************************/
+        /*********************************** slideshow **********************************/
+        /********************************************************************************/
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+        }
+
+        .mySlides-a {
+            display: none;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        /* Slideshow container */
+        .slideshow-container-a {
+            max-width: 1200px;
+            max-height: 350px;
+            position: relative;
+            margin: 20px auto 0;
+
+        }
+
+        .slideshow-container-a img {
+            border-radius: 13px;
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext-a {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot-a {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active-a {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade-a {
+            -webkit-animation-name: fade-a;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade-a;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade-a {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade-a {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+
+
+        /*********************************************************************************************/
+        /*  ------------------------------------ Resuable Component -------------------------------- */
+        /*********************************************************************************************/
+
+        h2 {
+            font-family: farTitr !important;
+            font-size: 140% !important;
+            background-color: #ff2858;
+            color: #fff;
+            padding: 6px 40px 6px 15px;
+            display: inline-block;
+            clip-path: polygon(0% 0%, 100% 0, 85% 50%, 100% 100%, 0% 100%);
+        }
+
+        .main-body {
+            margin-top: 20px;
+            font-family: farNazanin;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .rows {
+            max-width: 94%;
+            margin: 0 auto;
+        }
+
+        /******************************************* Base Cards ***************************************/
+        .cards {
+            width: 15%;
+            min-width: 268px;
+            /* height: 399.484px; */
+            margin: 1%;
+            border-radius: 15px;
+        }
+
+        .cards-title {
+            text-align: center;
+            padding: 50px 0;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .cards-title img {
+            height: auto;
+            width: 60%;
+            border-radius: 50%;
+        }
+
+        .cards-description {
+            margin: 10px 10%;
+            font-size: 90%;
+        }
+
+        .cards-description p {
+            max-height: 55px;
+        }
+
+        .cards-pricing {
+            margin: 0px 10% 0;
+            padding: 0 0 10px;
+        }
+
+        .cards-pricing p {
+            text-align: left;
+            display: inline-block;
+            float: left;
+        }
+
+        /**************************************** Slides Buttons *************************************/
+
+        .slides-button {
+            position: relative;
+        }
+
+        .slides-button .slides-button-prev,
+        .slides-button .slides-button-next {
+            top: -20rem;
+            border: 1px solid #cc002c;
+            padding: 5px 10px;
+            font-size: 120%;
+            font-weight: bold;
+            color: #cc002c;
+            outline: none;
+            transition: color 0.5s, background-color 0.5s;
+            font-family: "Arial";
+        }
+
+        .slides-button button:hover {
+            color: #fff;
+            background-color: #cc002c;
+        }
+
+        .slides-button button:active {
+            color: #cc002c;
+            background-color: #fff
+        }
+
+        .slides-button-prev {
+            position: absolute;
+            left: -10px;
+        }
+
+        .slides-button-next {
+            position: absolute;
+            right: -10px;
+        }
+
+        /*********************************************************************************************/
+        /*  ------------------------------------- Discount Section --------------------------------- */
+        /*********************************************************************************************/
+
+        .discount {
+            background-color: rgb(248, 248, 248);
+            padding: 30px 0 60px;
+        }
+
+        .discount .rows:first-child {
+            margin-bottom: 40px;
+        }
+
+        .discount .cards {
+            box-shadow: 5px 5px 5px rgb(238, 238, 238);
+            background-color: #fff;
+            height: 445.484px;
+        }
+
+        .discount .cards-title {
+            border-bottom: 1px solid rgb(238, 238, 238);
+            background-color: rgb(241, 241, 241);
+        }
+
+        .discount .special .cards-title {
+            background-color: #cc002c;
+        }
+
+        .discount .cards-pricing {
+            float: left;
+            padding-bottom: 50px;
+            width: 80%;
+        }
+
+        .price-cont {
+            height: 30px;
+            margin-bottom: 1rem;
+        }
+
+        .off-percent {
+            float: left;
+            margin-right: 10px;
+            color: #fff;
+            background-color: #ff2858;
+            border-radius: 10px;
+            font-family: farTitr;
+            margin-right: 10px;
+            font-size: 80%;
+            padding: 2px 6px;
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+
+        .last-price {
+            float: left;
+            text-decoration: line-through;
+            color: rgb(199, 199, 199);
+            margin-bottom: 16px;
+        }
+
+        .real-price-cont {
+            float: left;
+            height: 30px;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        .currency {
+            float: left;
+        }
+
+        .real-price {
+            float: left;
+            font-family: farTitr;
+            padding: 0 0 0 5px;
+        }
+
+        .btn-cont {
+            background-color: lawngreen;
+            height: 30px;
+            display: inline-block;
+            width: 100%;
+            float: right;
+        }
+
+        .add-btn {
+            color: #fff;
+            background-color: #ff2858;
+            border-radius: 10px;
+            font-family: farTitr;
+            font-size: 90%;
+            padding: 1px 10px;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            margin-right: -0.5rem;
+            display: inline-block;
+
+        }
+
+        .special-off {
+            background-color: #cc002c;
+        }
+
+        /*********************************************************************************************/
+        /*  ------------------------------------- Sales Section ------------------------------------ */
+        /*********************************************************************************************/
+        .sales {
+            padding: 30px 0 60px;
+        }
+
+        .sales .rows:first-child {
+            margin-bottom: 40px;
+        }
+
+        .sales .cards {
+            box-shadow: 5px 5px 5px rgb(238, 238, 238);
+            background-color: rgb(250, 250, 250);
+        }
+
+        .sales .cards-title {
+            border-bottom: 1px solid rgb(238, 238, 238);
+            background-color: rgb(241, 241, 241);
+        }
+
+        .sales .cards-pricing p {
+            font-family: farTitr;
+        }
+
+        .sales .cards-pricing p span {
+            margin-right: 10px;
+            font-family: farNazanin;
+        }
+
+        /*********************************************************************************************/
+        /*  ------------------------------------- Product Section ---------------------------------- */
+        /*********************************************************************************************/
+
+        .products {
+            padding: 0;
+        }
+
+        .products-section {
+            width: 100%;
+            padding: 30px 0;
+        }
+
+        .products [class*="col"] {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .products-section:nth-of-type(odd) [class*="col"]:first-child {
+            align-items: center;
+        }
+
+        .products-section:nth-of-type(even) [class*="col"]:first-child {
+            align-items: flex-end;
+        }
+
+        .products-section:nth-of-type(odd) {
+            background-color: #ff2858;
+            color: #fff;
+        }
+
+        .products-section:nth-of-type(even) {
+            background-color: #fff;
+            color: #ff2858;
+        }
+
+        .products-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+
+        .products-heading {
+            font-size: 140%;
+            font-family: farTitr;
+        }
+
+        .products-paragraph {
+            width: 60%;
+            font-size: 110%;
+            text-align: justify;
+            margin-top: 20px;
+        }
+
+        /* ************************************************************************************** */
+        /*  -------------------------- Footer Starts ------------------------- */
+        /* ************************************************************************************** */
+        .footer-p {
+            font-family: Bkoodak;
+            font-size: large;
+            text-align: justify;
+        }
+
+        .top-footer-background {
+            background-color: #ebebeb !important;
+        }
+
+        .container {
+            max-width: 94%;
+        }
+
+        .map-img {
+            max-width: 650px;
+        }
+
+        .map-div {
+            overflow-x: hidden;
+        }
+
+        .header {
+            font-family: farTitr;
+            font-size: xx-large;
+        }
+
+        .margin-bottom-0 {
+            margin-bottom: 0 !important;
+        }
+
+        .categories-container {
+
+            margin-bottom: 1.5rem;
+        }
+
+        .padding-0 {
+            padding: 0;
+        }
+
+        .categories-header {
+            font-family: farNazanin;
+            font-size: x-large;
+            color: rgb(255, 255, 255);
+            margin-top: 1rem;
+        }
+
+        .categories li a {
+            font-family: farNazanin;
+            color: rgb(226, 222, 222) !important;
+            font-size: large;
+            transition: 0.3s;
+            text-decoration: none !important;
+
+        }
+
+        .categories li a:hover {
+            color: rgb(255, 255, 255) !important;
+        }
+
+        .cut-text {
+            display: inline-block;
+            width: 160px;
+            white-space: nowrap;
+            overflow: hidden !important;
+            text-overflow: ellipsis;
+        }
+
+        .footer-img-container {
+            margin-bottom: 1rem;
+        }
+
+        .footer-img {
+            text-align: center !important;
+            max-height: 90px !important;
+            height: 90px !important;
+            margin-right: 50% !important;
+            transform: translate(50%);
+            padding: 0 !important;
+        }
+
+        /* ************************************************************************************** */
+        /*  ******** ------------------- Footer ends ----------- *************** */
+        /* ************************************************************************************** */
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- MAIN NAVBAR for desktop -->
+            <div id="thinline1" class="thinline">
+            </div>
+            <div id="mainnav-dskt" class="mainnavdskt">
+                <div class="thinline2">
+                </div>
+                <div class="mainnavdskt-container">
+                    <div class="mainnavdskt-wrap">
+                        <div class="mainnavdskt-wrap-logo">
+                            <a href="#">
+                                <img class="navlogo" src="resources\img\textlogo1.png" alt="شارپ مارکت">
+                            </a>
+                        </div>
+                        <div class="mainnavdskt-wrap-searchsection">
+                            <div class="searchsection-container">
+                                <div class="searchsection-container-searchbox">
+                                    <input class="searchbox-inside" type="text" placeholder="جستوجو کنید">
+                                    <div class="searchbtn-section">
+                                        <button class="searchbtn-button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mainnavdskt-wrap-loginsection">
+                            <a class="loginsection-container" href="#">
+                                <span class="loginsection-container-logo">
+                                    <img class="size" src="resources/img/person-circle.svg" alt="">
+                                </span>
+                                <span class="loginsection-container-text">
+                                    ورود / ثبت نام
+                                </span>
+                            </a>
+                        </div>
+                        <div class="mainnavdskt-wrap-shopsection">
+                            <a class="shopsection-container" href="#">
+                                <img class="size2" src="resources/img/cart-fill.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="category" class="mainnavdskt-categorysection">
+                <div class="categorysection-wrap">
+                    <li>
+                        <a class="categorysection-wrap-menu" href="#">
+                            <i class="w3-xlarge fa fa-home"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="categorysection-wrap-menu" href="#">لبنیات </a>
+                    </li>
+                    <li>
+                        <a class="categorysection-wrap-menu" href="#">نوشیدنی و دمنوش ها</a>
+                    </li>
+                    <li>
+                        <a class="categorysection-wrap-menu" href="#">میوه و سبزیجات</a>
+                    </li>
+                    <li>
+                        <a class="categorysection-wrap-menu" href="#">شیرینی و تنقلات</a>
+                    </li>
+                    <li>
+                        <a class="categorysection-wrap-menu" href="#">شوینده و بهداشتی</a>
+                    </li>
+                    <li>
+                        <a class="categorysection-wrap-menu" href="#">لوازم تحریر و اداری</a>
+                    </li>
+                    <li>
+                        <a class="categorysection-wrap-menu" href="#">اسباب بازی</a>
+                    </li>
+                </div>
+            </div>
+            <!-- Responsive navbar -->
+            <div id="mainnav-res" class="mainnavres">
+                <div class="mainnav-res-guidehelp">
+                    <a href="#">
+                        <img class="guidehelp-queslogo" src="resources/img/qestion.png" alt="">
+                        <div class="guidehelp-text">راهنما</div>
+                    </a>
+                </div>
+                <div class="mainnav-res-sharpmarketlogo">
+                    <a href="#">
+                        <img class="sharpmarketlogo-englishlogo" src="resources/img/textlogo2.png" alt="">
+                    </a>
+                </div>
+                <div class="mainnav-res-loginsection">
+                    <a href="#">
+                        <img class="personlogosize" src="resources/img/person-circle-white.png" alt="">
+                    </a>
+                </div>
+                <div class="mainnav-res-basketsection">
+                    <a href="#">
+                        <img src="resources/img/cart-fill.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="slideshow-container-a">
+
+            <div class="mySlides-a fade-a">
+                <img src="resources\img\tabrik.png" style="width:100%">
+            </div>
+
+            <div class="mySlides-a fade-a">
+                <img src="resources\img\moraba1.png" style="width:100%">
+            </div>
+
+            <div class="mySlides-a fade-a">
+                <img src="resources\img\pic1.jfif" style="width:100%">
+            </div>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot-a"></span>
+            <span class="dot-a"></span>
+            <span class="dot-a"></span>
+        </div>
+
+        <div class="benefits-cont">
+
+        </div>
+    </header>
+    <div class="main-body">
+        <section class="discount">
+
+            <div class="rows">
+                <h2>فروش ویژه</h2>
+            </div>
+
+            <div class="rows">
+
+                <div class="glide">
+                    <div class="glide__track" data-glide-el="track">
+
+                        <ul class="glide__slides">
+
+                            <li class="glide__slide">
+                                <div class="cards">
+                                    <div class="cards-title">
+                                        <img src="resources/img/products-card/oliveoil.jpg" alt="Discount Pictures">
+                                    </div>
+                                    <div class="cards-description">
+                                        <p>روغن زیتون برگس 1 لیتری<br>&nbsp;</p>
+                                    </div>
+                                    <div class="cards-pricing">
+                                        <section class="price-cont">
+                                            <div class="off-percent">25%</div>
+                                            <div class="last-price">100,000</div>
+                                        </section>
+
+                                        <div class="real-price-cont">
+                                            <div class="currency">تومان</div>
+                                            <div class="real-price">75,000</div>
+                                            <button class="add-btn">+</button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </li>
+
+                            <li class="glide__slide">
+                                <div class="cards special">
+                                    <div class="cards-title">
+                                        <img src="resources/img/products-card/shoe.png" alt="Discount Pictures">
+                                    </div>
+                                    <div class="cards-description">
+                                        <p>کفش اسپورت مردانه مدل S-2210<br>&nbsp;</p>
+                                    </div>
+                                    <div class="cards-pricing">
+                                        <section class="price-cont">
+                                            <div class="off-percent special-off">60%</div>
+                                            <div class="last-price">300,000</div>
+                                        </section>
+
+                                        <div class="real-price-cont">
+                                            <div class="currency">تومان</div>
+                                            <div class="real-price">120,000</div>
+                                            <button class="add-btn">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="glide__slide">
+                                <div class="cards">
+                                    <div class="cards-title">
+                                        <img src="resources/img/products-card/macaroni.jpeg" alt="Discount Pictures">
+                                    </div>
+                                    <div class="cards-description">
+                                        <p>ماکارونی 200 گرمی پاساگا<br>&nbsp;</p>
+                                    </div>
+                                    <div class="cards-pricing">
+                                        <section class="price-cont">
+                                            <div class="off-percent">33%</div>
+                                            <div class="last-price">62,500</div>
+                                        </section>
+
+                                        <div class="real-price-cont">
+                                            <div class="currency">تومان</div>
+                                            <div class="real-price">41,875</div>
+                                            <button class="add-btn">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="glide__slide">
+                                <div class="cards">
+                                    <div class="cards-title">
+                                        <img src="resources/img/products-card/handwash.jpg" alt="Discount Pictures">
+                                    </div>
+                                    <div class="cards-description">
+                                        <p>مایع دستشویی نسل هفتم<br>&nbsp;</p>
+                                    </div>
+                                    <div class="cards-pricing">
+                                        <section class="price-cont">
+                                            <div class="off-percent">12%</div>
+                                            <div class="last-price">50,000</div>
+                                        </section>
+
+                                        <div class="real-price-cont">
+                                            <div class="currency">تومان</div>
+                                            <div class="real-price">44,000</div>
+                                            <button class="add-btn">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="glide__slide">
+                                <div class="cards">
+                                    <div class="cards-title">
+                                        <img src="resources/img/products-card/doritos.jpg" alt="Discount Pictures">
+                                    </div>
+                                    <div class="cards-description">
+                                        <p>چیپس دوریتو<br>&nbsp;</p>
+                                    </div>
+                                    <div class="cards-pricing">
+                                        <section class="price-cont">
+                                            <div class="off-percent">20%</div>
+                                            <div class="last-price">10,000</div>
+                                        </section>
+
+                                        <div class="real-price-cont">
+                                            <div class="currency">تومان</div>
+                                            <div class="real-price">8,000</div>
+                                            <button class="add-btn">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="glide__slide">
+                                <div class="cards special">
+                                    <div class="cards-title">
+                                        <img src="resources/img/products-card/iphone.png" alt="Discount Pictures">
+                                    </div>
+                                    <div class="cards-description">
+                                        <p>آیفون 12 دو سیم کارت 256 گیگ<br>&nbsp;</p>
+                                    </div>
+                                    <div class="cards-pricing">
+                                        <section class="price-cont">
+                                            <div class="off-percent special-off">12%</div>
+                                            <div class="last-price">33,350,000</div>
+                                        </section>
+
+                                        <div class="real-price-cont">
+                                            <div class="currency">تومان</div>
+                                            <div class="real-price">29,344,800</div>
+                                            <button class="add-btn">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="glide__slide">
+                                <div class="cards">
+                                    <div class="cards-title">
+                                        <img src="resources/img/products-card/tooth-cream.jfif" alt="Discount Pictures">
+                                    </div>
+                                    <div class="cards-description">
+                                        <p>خمیردندان سفید کننده کرست<br>&nbsp;</p>
+                                    </div>
+                                    <div class="cards-pricing">
+                                        <section class="price-cont">
+                                            <div class="off-percent">30%</div>
+                                            <div class="last-price">80,000</div>
+                                        </section>
+
+                                        <div class="real-price-cont">
+                                            <div class="currency">تومان</div>
+                                            <div class="real-price">56,000</div>
+                                            <button class="add-btn">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="glide__arrows slides-button" data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left slides-button-prev"
+                            data-glide-dir="<">&#62;</button>
+                        <button class="glide__arrow glide__arrow--right slides-button-next"
+                            data-glide-dir=">">&#60;</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="sales">
+
+            <div class="rows">
+                <h2>پر فروش ترین ها</h2>
+            </div>
+
+            <div class="rows">
+
+                <div class="glide">
+                    <div class="glide__track" data-glide-el="track">
+
+                        <ul class="glide__slides">
+
+                            <li class="glide__slide">
+                                <div class="cards">
+                                    <div class="cards-title">
+                                        <img src="resources/img/products-card/beans.jpg" alt="Discount Pictures">
+                                    </div>
+                                    <div class="cards-description">
+                                        <p>کنسرو لوبیا کمپبلا<br>&nbsp;</p>
+                                    </div>
+                                    <div class="cards-pricing">
+                                        <p>96,000<span>تومان</span></p>
+                                        <button class="add-btn">+</button>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="glide__slide">
+                                <div class="cards special">
+                                    <div class="cards-title">
+                                        <img src="resources/img/products-card/butter.jpg" alt="Discount Pictures">
+                                    </div>
+                                    <div class="cards-description">
+                                        <p>کره کاملا طبیعی مری تیلو<br>&nbsp;</p>
+                                    </div>
+                                    <div class="cards-pricing">
+                                        <p>125,000<span>تومان</span></p>
+                                        <button class="add-btn">+</button>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="glide__slide">
+                                <div class="cards">
+                                    <div class="cards-title">
+                                        <img src="resources/img/products-card/rpg.png" alt="Discount Pictures">
+                                    </div>
+                                    <div class="cards-description">
+                                        <p>نسخه پنجم بازی اژدهایان و سیاه چال ها</p>
+                                    </div>
+                                    <div class="cards-pricing">
+                                        <p>2,168,000<span>تومان</span></p>
+                                        <button class="add-btn">+</button>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="glide__slide">
+                                <div class="cards">
+                                    <div class="cards-title">
+                                        <img src="resources/img/products-card/coockie.jpg" alt="Discount Pictures">
+                                    </div>
+                                    <div class="cards-description">
+                                        <p>کلوچه 6 عددی همراه با شکلات<br>&nbsp;</p>
+                                    </div>
+                                    <div class="cards-pricing">
+                                        <p>53,500<span>تومان</span></p>
+                                        <button class="add-btn">+</button>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="glide__slide">
+                                <div class="cards">
+                                    <div class="cards-title">
+                                        <img src="resources/img/products-card/juice.png" alt="Discount Pictures">
+                                    </div>
+                                    <div class="cards-description">
+                                        <p>آبمیوه طبیعی پرتقال ریتا<br>&nbsp;</p>
+                                    </div>
+                                    <div class="cards-pricing">
+                                        <p>45,000<span>تومان</span></p>
+                                        <button class="add-btn">+</button>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="glide__slide">
+                                <div class="cards">
+                                    <div class="cards-title">
+                                        <img src="resources/img/products-card/cheese.jpg" alt="Discount Pictures">
+                                    </div>
+                                    <div class="cards-description">
+                                        <p>پنیر فرآوری شده کرفت<br>&nbsp;</p>
+                                    </div>
+                                    <div class="cards-pricing">
+                                        <p>110,700<span>تومان</span></p>
+                                        <button class="add-btn">+</button>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="glide__slide">
+                                <div class="cards">
+                                    <div class="cards-title">
+                                        <img src="resources/img/products-card/cocacola.jpg" alt="Discount Pictures">
+                                    </div>
+                                    <div class="cards-description">
+                                        <p>نوشابه کوکاکولا<br>&nbsp;</p>
+                                    </div>
+                                    <div class="cards-pricing">
+                                        <p>23,000<span>تومان</span></p>
+                                        <button class="add-btn">+</button>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="glide__arrows slides-button" data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left slides-button-prev"
+                            data-glide-dir="<">&#62;</button>
+                        <button class="glide__arrow glide__arrow--right slides-button-next"
+                            data-glide-dir=">">&#60;</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="products">
+
+            <div class="products-section">
+                <div class="rows">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img class="products-image" src="resources/img/products-description/shoe-p1.png"
+                                alt="Products-Items">
+                        </div>
+                        <div class="col-lg-8">
+                            <h3 class="products-heading">یه کفش راحت میتونه تفاوت هارو رقم بزنه!</h3>
+                            <p class="products-paragraph">کفش راحتی مردانه مدل S-2210
+                                برای کاهش خستگی در استفاده طولانی مدت طراحی شده است. کفه سه لایه و رویه ضد آب این کفش آن
+                                را برای استفاده
+                                در تمامی محیط ها
+                                مناسب کرده است. در کنار تمامی موارد فنی، تیم طراحی کویر سفید توجه ویژه ای نیز به شکل و
+                                طراحی این مدل
+                                داشته است به طوری که
+                                .این کفش اسپورت، به راحتی قابل ست شدن با تمامی شلوارهای جین، کتان و .... را دارد
+                                اگر به دنبال کفشی شیک و ساده هستید، این کفش شگفت انگیز را به هیج وجه از دست ندید!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-section">
+                <div class="rows">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h3 class="products-heading">حرکت با سرعت ماورای نسل چهارم!</h3>
+                            <p class="products-paragraph">آیفون 12 جدیدترین محصول شرکت اپل با استفاده از تکنولوژی نسل
+                                پنجم اینترنت همراه
+                                تجربه‌ای متفاوت از هر آنچه تا کنون دیده‌اید را به ارمغان می‌آورد. این محصول با سخت افزار
+                                قدرتمند، طراحی
+                                مدرن و شکیل و دوربین با
+                                کیفیت بدون شک انتخابی بی‌بدیل برای علاقه‌مندان به حوزه تکنولوژی است که همواره بدنبال
+                                آخرین پیشرفت های بی
+                                پایان صنعت تلفن‌های همراه هستند، می‌باشد.
+                            </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <img class="products-image" src="resources/img/products-description/iphone-p2.png"
+                                alt="Products-Items">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-section">
+                <div class="rows">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img class="products-image" src="resources/img/products-description/juice-p3.png"
+                                alt="Products-Items">
+                        </div>
+                        <div class="col-lg-8">
+                            <h3 class="products-heading">طعم تازه و لذت بخش سلامت</h3>
+                            <p class="products-paragraph">حتما برای شما هم اتفاق افتاده است که دچار عطش شده باشید و چه
+                                چیزی جز یک
+                                آبمیوه خوشمزه می‌تونه
+                                این عطش برطرف کند؟ اگر این آبمیوه کم قند و سرشار از ویتامین ها هم باشد که چه بهتر!
+                                آبمیوه های ریتا از
+                                مرغوب ترین میوه های گرمیسری تهیه
+                                و با کمترین مواد اضافه شونده به بازار عرضه می شوند تا ضامن سلامت مصرف کنندها باشند.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-section">
+                <div class="rows">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h3 class="products-heading">ماجراجویی در قلب سرزمین‌های فراموش شده</h3>
+                            <p class="products-paragraph">آیا دوست دارید پهلوان دلیری باشید که تمام عمر خود را صرف گسترش
+                                عدالت کرده
+                                است؟
+                                شاید هم علاقه‌مند باشید نقش جادوگری قدرتمند و متسلط بر عالم عناصر را بازی کنید که با
+                                توانایی ذهنش
+                                می‌تواند هر دشمنی را به خاکستر تبدیل کند؟
+                                البته که دزدی چابک که در تاریک ترین نقاط جامعه به دنبال بخت خود می‌گردد و برای رسیدن به
+                                آن از هر کاری
+                                دریغ نمی‌کند هم بد نیست!
+                                دنیای اژدهایان و سیاه چال ها با انتخاب‌های بی پایانش تا مدت‌ها می‌تواند شما را سرگرم کند
+                                پس همین حالا
+                                شروع به ساخت شخصیت مورد علاقه‌تان کنید،
+                                مطمئن باشید که قضاوتتان نمی‌کنیم!
+                            </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <img class="products-image" src="resources/img/products-description/rpg-p4.png"
+                                alt="Products-Items">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <!--***********************************************************-->
+    <!-- *********** Footer Starts **************-->
+    <!--***********************************************************-->
+    <footer class="bg-light text-center text-lg-start top-footer-background">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase" style="font-family: var(--bs-font-sans-serif);">چرا شارپ‌مارکت؟</h5>
+                    <p class="footer-p">
+                        سوپرمارکت اینترنتی شارپ‌مارکت بیش از ۵۰۰۰ کالای متنوع در دسته‌بند‌ی‌های گوناگون نظیر لبنیات،
+                        خواربار، میوه و
+                        سبزیجات تازه، نان، مواد پروتئینی، لوازم بهداشتی و آرایشی ... را به صورت آنلاین عرضه می‌کند و
+                        گستردگی این
+                        محصولات این امکان را به کاربران می‌دهد که تمامی اجناس مورد نیاز خود را به صورت یکباره تهیه کرده
+                        و با توجه به
+                        موقعیت جغرافیایی ثبت شده در اپلیکیشن و یا وب‌سایت، اجناس خریداری شده را در زمانی کوتاه و از
+                        نزدیکترین شعبه
+                        شارپ‌مارکت، درب منزل خود تحویل بگیرند.
+                    </p>
+                    <p class="footer-p">
+                        شما می توانید به سادگی با مشخص کردن موقعیت آدرس خود، اجناس سوپرمارکت های نزدیک خودتان را مشاهده
+                        کنید و به
+                        سادگی خرید خود را انجام دهید. سفارش شما در کوتاه ترین زمان ممکن و به صورت رایگان، توسط پیک
+                        فروشگاه، برایتان
+                        ارسال خواهد شد. شارپ‌مارکت همواره تمامی نیازهای روزمره شما را برای خرید اینترنتی انواع محصولات
+                        سوپرمارکتی از
+                        خواروبار گرفته تا انواع مواد غذایی، لبنیات، نوشیدنی ها، محصولات شوینده بهداشتی زیبایی، انواع
+                        کنسرو و غذای
+                        اماده تا خرید لوازم مصرفی فرهنگی را برای شما عزیزان فراهم نموده تا با تنوع بالای محصولات شارپ
+                        تجربه خرید
+                        آنلاین آسانی را در ذهن شما به یاد ماندنی کند.
+                    </p>
+                </div>
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0 map-div">
+                    <h5 class="text-uppercase">مکان</h5>
+
+                    <div class="mapouter">
+                        <div class="gmap_canvas"><iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1607.6820916328222!2d59.56480093119511!3d36.303474489382815!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x289e83084e3d12e3!2sSharp%20Market!5e0!3m2!1sen!2sus!4v1614908254357!5m2!1sen!2sus"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe><a
+                                href="https://www.whatismyip-address.com"></a><br>
+                            <style>
+                                .mapouter {
+                                    position: relative;
+                                    text-align: right;
+                                    height: 450px;
+                                    width: 600px;
+                                }
+                            </style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                            <style>
+                                .gmap_canvas {
+                                    overflow: hidden;
+                                    background: none !important;
+                                    height: 450px;
+                                    width: 600px;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+    </footer>
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white bottom-footer-background">
+        <!-- Grid container -->
+        <div class="container p-4">
+
+            <!-- Section: Form -->
+            <section class="">
+                <form action="">
+                    <!--Grid row-->
+                    <div class="row d-flex justify-content-center">
+                        <!--Grid column-->
+                        <div class="col-auto">
+                            <p class="pt-2">
+                                <strong class="header">عضویت در خبرنامه !</strong>
+                            </p>
+                        </div>
+                        <!--Grid column-->
+                        <!-- Section: Text -->
+                        <section class="mb-4 margin-bottom-0">
+                            <p class="text-center">
+                                شما میتوانید با ثبت آدرس ایمیل خود از طرح ها و تخفیف های ویژه شارپ‌مارکت مطلع شوید.
+
+                            </p>
+                        </section>
+                        <!--Grid column-->
+                        <div class="col-md-5 col-12">
+                            <!-- Email input -->
+                            <div class="form-outline form-white mb-4">
+                                <input type="email" id="form5Example2" class="form-control"
+                                    placeholder="youremail@gmail.com" />
+
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-auto padding-0">
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-outline-light mb-4 email-btn">
+                                عضویت
+                            </button>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </form>
+            </section>
+
+            <!-- Section: Links -->
+            <section class="categories-container" style="text-align: right!important;">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-2 col-md-4 col-sm-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase categories-header">مواد غذایی اصلی</h5>
+
+                        <ul class="list-unstyled mb-0 categories">
+                            <li>
+                                <a href="#!" class="text-white categories-text">انواع نان</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">برنج و حبوبات و غلات</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">تخم مرغ و قارچ و جوانه</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">رب و سس</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">روغن</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">قند و شکر و نبات خرما</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">ماکارونی و لازانیا</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase categories-header">لبنیات و صبحانه</h5>
+
+                        <ul class="list-unstyled mb-0 categories">
+                            <li>
+                                <a href="#!" class="text-white categories-text">بستنی</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">پنیر</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">حلواشکری و کنجد</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">خامه</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">شیر</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">کره</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">ماست</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-sm-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase categories-header">نوشیدنی ها</h5>
+
+                        <ul class="list-unstyled mb-0 categories">
+                            <li>
+                                <a href="#!" class="text-white categories-text">انرژی زاها</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">آب معدنی ها</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">آب میوه ها</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">چای و دمنوش</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">دوغ ها</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">قهوه</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">ماءالشعیرها</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-sm-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase categories-header">کنسرو و غذای آماده</h5>
+
+                        <ul class="list-unstyled mb-0 categories">
+                            <li>
+                                <a href="#!" class="text-white categories-text">انواع ترشی</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">انواع شور</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">انواع کمپوت</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">انواع کنسرو</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">زیتون</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">سوپ و آش فوری</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">غذای آماده</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-sm-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase categories-header">شیرینی و تنقلات</h5>
+
+                        <ul class="list-unstyled mb-0 categories">
+                            <li>
+                                <a href="#!" class="text-white categories-text">آدامس ها</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">بیسکویت</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">پاستیل و اسمارتیز</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">پفک ها</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">چیپس ها</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">ژله</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">شکلات و کاکائو</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase categories-header">شوینده و بهداشتی</h5>
+
+                        <ul class="list-unstyled mb-0 categories">
+                            <li>
+                                <a href="#!" class="text-white categories-text">بهداشت بدن</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">بهداشت دهان و دندان</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">بهداشت مو</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">پاک کننده ها</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white categories-text">جرم گیر و سفید کننده</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">دستمال کاغذی</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white cut-text">محصولات ماشین ظرفشویی و لباس‌شویی</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+            </section>
+            <footer class="text-center text-white">
+                <!-- Grid container -->
+                <div class="container p-4">
+                    <!-- Section: Images -->
+                    <section class="text-center footer-img-container">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-3 col-sm-4 col-5 mb-4 mb-md-0">
+                                <div class="bg-image hover-overlay ripple shadow-1-strong rounded footer-img"
+                                    data-ripple-color="light">
+                                    <img src="https://www.radykala.com/lib/themes/kalaoma/assets/test/samandehi-logo.png"
+                                        class="w-100" />
+
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-4 col-5 mb-4 mb-md-0">
+                                <div class="bg-image hover-overlay ripple shadow-1-strong rounded footer-img"
+                                    data-ripple-color="light">
+                                    <img src="resources\img\footer-img1.png" class="w-100 footer-img" />
+
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-4 col-5 mb-4 mb-md-0">
+                                <div class="bg-image hover-overlay ripple shadow-1-strong rounded footer-img"
+                                    data-ripple-color="light">
+                                    <img src="https://okala.com/assets/img/ecunion.png?v=og9o33zDXGdzaFXn5LsVopVexZYk5LYK6osDbLeFHPw"
+                                        class="w-100" style="height: 90px!important; width: inherit!important;" />
+
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-4 col-5 mb-4 mb-md-0">
+                                <div class="bg-image hover-overlay ripple shadow-1-strong rounded footer-img"
+                                    data-ripple-color="light">
+                                    <img src="https://okala.com/assets/img/popular-brand.png?v=o0BCYo5fDY9DRIG_WhjTZCQrjtRETY4JlKW2bjpesN0"
+                                        class="w-100" />
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-4 col-5 mb-4 mb-md-0">
+                                <div class="bg-image hover-overlay ripple shadow-1-strong rounded footer-img"
+                                    data-ripple-color="light">
+                                    <img src="https://okala.com/assets/img/senfi.png?v=w03wmXmNqVccwzYj5sUZuv-bWdpVSh7GSui1pRHRYvo"
+                                        class="w-100" />
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-4 col-5 mb-4 mb-md-0">
+                                <div class="bg-image hover-overlay ripple shadow-1-strong rounded footer-img"
+                                    data-ripple-color="light">
+                                    <img src="https://okala.com/assets/img/wf97.png?v=YXGuYgwaS8FBIKhCJoQyGIx2RntD51X4XUGujSwjCaI"
+                                        class="w-100" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Section: Images -->
+                </div>
+
+                <!-- Section: Social media -->
+                <section class="mb-4 text-center margin-bottom-0">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-twitter"></i></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-google"></i></a>
+
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-instagram"></i></a>
+                </section>
+                <!-- Section: Social media -->
+        </div>
+    </footer>
+    <!--***********************************************************-->
+    <!-- ************** Footer ends ********** -->
+    <!--***********************************************************-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+
+    <script>
+        const glide = document.querySelectorAll('.glide');
+        const glideOption = {
+            type: 'slider',
+            perView: 5,
+            gap: 30,
+            rewind: false,
+            direction: 'rtl',
+            bound: true,
+            breakpoints: {
+                1500: {
+                    perView: 4
+                },
+                1200: {
+                    perView: 3
+                },
+                992: {
+                    perView: 3
+                },
+                768: {
+                    perView: 2
+                },
+                576: {
+                    perView: 1,
+                    focusAt: 'center',
+                    peek: 100,
+                    gap: 0
+                }
+            }
+        };
+
+        const discountSlider = new Glide(glide[0], glideOption);
+        const salesSlider = new Glide(glide[1], glideOption);
+        discountSlider.mount();
+        salesSlider.mount();
+
+
+
+        // PLEASE DONT CHANGE THIS FILE //
+
+
+        window.onscroll = function () {
+            stickynav();
+            stickynavres();
+        };
+
+        var mainnav = document.getElementById("mainnav-dskt");
+        var mainnavres = document.getElementById("mainnav-res");
+        var category = document.getElementById("category");
+        var sticky = mainnav.offsetTop;
+        var sina = mainnavres.offsetTop;
+
+
+
+        function stickynav() {
+            if (window.pageYOffset > sticky) {
+                mainnav.classList.add("sticky")
+                thinLine1.classList.add("testclass");
+            } else {
+                mainnav.classList.remove("sticky");
+                thinLine1.classList.remove("testclass");
+            }
+        }
+
+        function stickynavres() {
+            if (window.pageYOffset > sina) {
+                mainnavres.classList.add("sticky2")
+            } else {
+                mainnavres.classList.remove("sticky2");
+            }
+        }
+
+
+
+
+        var winwidth = window.innerWidth;
+        var thinLine1 = document.getElementById("thinline1");
+
+
+        navrespone();
+
+        window.addEventListener("resize", function () {
+            winwidth = window.innerWidth;
+            navrespone();
+        });
+
+        function navrespone() {
+            if (winwidth <= 990) {
+                mainnavres.classList.remove("js--displayoff");
+                category.classList.remove("js--displayon");
+                mainnav.classList.remove("js--displayonblock");
+                thinLine1.classList.remove("js--displayon");
+                mainnavres.classList.add("js--displayon");
+                category.classList.add("js--displayoff");
+                mainnav.classList.add("js--displayoff");
+                thinLine1.classList.add("js--displayoff");
+            } else if (winwidth > 990) {
+                mainnavres.classList.remove("js--displayon");
+                category.classList.remove("js--displayoff");
+                mainnav.classList.remove("js--displayoff");
+                thinLine1.classList.remove("js--displayoff");
+                mainnavres.classList.add("js--displayoff");
+                category.classList.add("js--displayon");
+                mainnav.classList.add("js--displayonblock");
+                thinLine1.classList.add("js--displayon");
+            }
+        }
+
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides-a");
+            var dots = document.getElementsByClassName("dot-a");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active-a", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active-a";
+            setTimeout(showSlides, 4500); // Change image every 2 seconds
+        }
+    </script>
+
+</body>
+
+</html>
